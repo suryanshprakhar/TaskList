@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo App UI Web</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@200&display=swap" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <div id="firstHtml">
+        <div class="container " id="blur">
+            <header>
+                <section class="tasks-list">
+                    <span class="tasks"><b>Tasks</b> Lists</span>
+                    <span class="add-list">Add List</span>
+                    <span class="material-icons add-icon" id="add" onclick="addTrip()">add_circle</span>
+                </section>
+            </header>
+            <div class="flex-container" id="flex-container"></div>
+        </div>
+        <div class="add-item" id="addItem" style="visibility: hidden;">
+            <section class="new-list-heading">
+                <h2>Add New List</h2>
+            </section>
+            <section class="new-list-input">
+                <input type="text" class="input-text" id="tripText" value=""><br>
+                <button class="btn-add" onClick="addItem()">ADD</button>
+                <button class="btn-add" onClick="closeThis()">CLOSE</button>
+            </section>
+        </div>
+        <div class="add-item" style="visibility: hidden;" id="addList">
+            <section class="new-list-heading">
+                <h2>Add New List</h2>
+            </section>
+            <section class="new-list-input">
+                <input type="text" class="input-text" id="listText"value=""><br>
+                <button class="btn-add" id="addListBtn" value="" onClick="addList(this.value)">ADD</button>
+                <button class="btn-add" onClick="closeThis()">CLOSE</button>
+            </section>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class="trip-container" id="tripContainer">
+        <section class="heading-trip">
+            <hr class="hr-left-newHtml">
+            <span class="trip-to"><b id="headingNewHtml"></b></span>
+            <hr class="hr-right-newHtml">
+        </section>
+        <section class="back-newHtml" id="backBtn">
+            <span class="material-icons back-icon" value="" id="backHtml" onclick="firstHtml(this.value)">arrow_circle_left</span>
+            <span class="text-back"><b>Back</b></span>
+        </section>
+        <!-- <section class="flex-item">
+            <h2 class="headline">Trip to Paris</h2>
+            <hr class="hr1">
+            <del class="delete-text"><b>Completed Task</b></del><br>
+            <span class="checkbox"> 
+                <input type="checkbox">
+                <label for="" class="pending-task">Pending Task</label>
+            </span>
+            <a href="tripAddItem.htm"><span class="material-icons add-circle">add_circle</span></a>
+        </section> -->
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+    <script src="index.js"></script>
+</body>
+
+</html>
