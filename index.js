@@ -114,7 +114,6 @@ function newHtml(obj) {
     document.getElementById('firstHtml').style.visibility = 'hidden'
     document.getElementById('tripContainer').style.visibility = 'visible'
     document.getElementById('headingNewHtml').innerText = obj.getAttribute('data-html')
-    // document.getElementById('backHtml').value = obj.getAttribute('data-html')
     let backbtn = document.createElement('span')
     backbtn.classList.add('material-icons', 'back-icon')
     backbtn.setAttribute('value', '')
@@ -133,13 +132,5 @@ function newHtml(obj) {
     temp.firstElementChild.nextElementSibling.classList.add('innerHrHtml')
 
 }
-// function firstHtml(){
-//     temp = document.getElementById(val)
-//     temp.classList.remove('newHtml')
-//     temp.firstElementChild.nextElementSibling.classList.remove('innerHrHtml')
-//     document.getElementById('tripContainer').style.visibility = 'hidden'
-//     document.getElementById('firstHtml').style.visibility = 'visible'
-
-// }
 document.getElementById('tripContainer').style.visibility = 'hidden'
 document.getElementById('tripContainer').style.position = 'absolute'
