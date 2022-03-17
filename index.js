@@ -7,7 +7,6 @@ function addTrip() {
 function addItem() {
     if (document.getElementById('tripText').value == "") {
         alert('Trip Name Cant Be Empty')
-
     }
     else if (tripArr.includes(document.getElementById('tripText').value)) {
         alert('Same Name Card Exist')
@@ -40,14 +39,7 @@ function addItem() {
         addIcon.setAttribute('value', "")
         addIcon.value = tempValue
         addIcon.setAttribute('onClick', 'addTheItem(this.value)')
-        // console.log(addIcon.value)
         document.getElementById(tempValue).append(addIcon)
-
-
-
-
-
-
 
 
 
@@ -95,12 +87,9 @@ function addList(val) {
     tempListBtn.setAttribute('value', '')
     tempListBtn.value = val
     tempListBtn.setAttribute('id', val + document.getElementById('listText').value + 'btn')
-    // tempListBtn.setAttribute('onClick', 'workdone(this)')
-    // document.getElementById(val).lastElementChild.previousElementSibling.before(tempListBtn)
-    tempListBtn.addEventListener('click' , function(){
+    tempListBtn.addEventListener('click', function () {
         tempListBtn.parentElement.style.textDecoration = 'line-through'
         tempListBtn.parentElement.style.color = 'red'
-        // tempListBtn.parentElement.style.textAlign = 'center'
         tempListBtn.remove()
     })
     tempList.appendChild(tempListBtn)
@@ -116,14 +105,6 @@ function addList(val) {
     document.getElementById('blur').style.filter = "blur(0)"
     document.getElementById('listText').value = ""
 }
-// function workdone(obj) {
-//     console.log(obj.getAttribute('value'))
-//     console.log(obj.getAttribute('data-class'))
-//     document.getElementById(obj.getAttribute('value') + obj.getAttribute('data-class')).style.textDecoration = 'line-through'
-//     document.getElementById(obj.getAttribute('value') + obj.getAttribute('data-class')).style.color = 'red'
-//     document.getElementById(obj.getAttribute('value')).style.textAlign = 'center'
-//     document.getElementById(obj.getAttribute('value') + obj.getAttribute('data-class') + 'btn').remove()
-// }
 function closeThis() {
     document.getElementById('addItem').style.visibility = 'hidden'
     document.getElementById('addList').style.visibility = 'hidden'
@@ -133,22 +114,32 @@ function newHtml(obj) {
     document.getElementById('firstHtml').style.visibility = 'hidden'
     document.getElementById('tripContainer').style.visibility = 'visible'
     document.getElementById('headingNewHtml').innerText = obj.getAttribute('data-html')
-    document.getElementById('backHtml').value = obj.getAttribute('data-html')
-
+    // document.getElementById('backHtml').value = obj.getAttribute('data-html')
+    let backbtn = document.createElement('span')
+    backbtn.classList.add('material-icons', 'back-icon')
+    backbtn.setAttribute('value', '')
+    backbtn.value = obj.getAttribute('data-html')
+    backbtn.innerText = 'arrow_circle_left'
+    backbtn.addEventListener('click', function () {
+        temp.classList.remove('newHtml')
+        temp.firstElementChild.nextElementSibling.classList.remove('innerHrHtml')
+        document.getElementById('tripContainer').style.visibility = 'hidden'
+        document.getElementById('firstHtml').style.visibility = 'visible'
+        backbtn.remove()
+    })
+    document.getElementById('backBtn').appendChild(backbtn)
     let temp = document.getElementById(obj.getAttribute('data-html'))
     temp.classList.add('newHtml')
-    // temp.style.visibility = 'visible'
-
     temp.firstElementChild.nextElementSibling.classList.add('innerHrHtml')
 
 }
-function firstHtml(val){
-    temp = document.getElementById(val)
-    temp.classList.remove('newHtml')
-    temp.firstElementChild.nextElementSibling.classList.remove('innerHrHtml')
-    document.getElementById('tripContainer').style.visibility = 'hidden'
-    document.getElementById('firstHtml').style.visibility = 'visible'
+// function firstHtml(){
+//     temp = document.getElementById(val)
+//     temp.classList.remove('newHtml')
+//     temp.firstElementChild.nextElementSibling.classList.remove('innerHrHtml')
+//     document.getElementById('tripContainer').style.visibility = 'hidden'
+//     document.getElementById('firstHtml').style.visibility = 'visible'
 
-}
+// }
 document.getElementById('tripContainer').style.visibility = 'hidden'
 document.getElementById('tripContainer').style.position = 'absolute'
