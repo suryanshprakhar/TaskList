@@ -95,8 +95,15 @@ function addList(val) {
     tempListBtn.setAttribute('value', '')
     tempListBtn.value = val
     tempListBtn.setAttribute('id', val + document.getElementById('listText').value + 'btn')
-    tempListBtn.setAttribute('onClick', 'workdone(this)')
-    document.getElementById(val).lastElementChild.previousElementSibling.before(tempListBtn)
+    // tempListBtn.setAttribute('onClick', 'workdone(this)')
+    // document.getElementById(val).lastElementChild.previousElementSibling.before(tempListBtn)
+    tempListBtn.addEventListener('click' , function(){
+        tempListBtn.parentElement.style.textDecoration = 'line-through'
+        tempListBtn.parentElement.style.color = 'red'
+        // tempListBtn.parentElement.style.textAlign = 'center'
+        tempListBtn.remove()
+    })
+    tempList.appendChild(tempListBtn)
 
 
 
@@ -109,14 +116,14 @@ function addList(val) {
     document.getElementById('blur').style.filter = "blur(0)"
     document.getElementById('listText').value = ""
 }
-function workdone(obj) {
-    console.log(obj.getAttribute('value'))
-    console.log(obj.getAttribute('data-class'))
-    document.getElementById(obj.getAttribute('value') + obj.getAttribute('data-class')).style.textDecoration = 'line-through'
-    document.getElementById(obj.getAttribute('value') + obj.getAttribute('data-class')).style.color = 'red'
-    document.getElementById(obj.getAttribute('value')).style.textAlign = 'center'
-    document.getElementById(obj.getAttribute('value') + obj.getAttribute('data-class') + 'btn').remove()
-}
+// function workdone(obj) {
+//     console.log(obj.getAttribute('value'))
+//     console.log(obj.getAttribute('data-class'))
+//     document.getElementById(obj.getAttribute('value') + obj.getAttribute('data-class')).style.textDecoration = 'line-through'
+//     document.getElementById(obj.getAttribute('value') + obj.getAttribute('data-class')).style.color = 'red'
+//     document.getElementById(obj.getAttribute('value')).style.textAlign = 'center'
+//     document.getElementById(obj.getAttribute('value') + obj.getAttribute('data-class') + 'btn').remove()
+// }
 function closeThis() {
     document.getElementById('addItem').style.visibility = 'hidden'
     document.getElementById('addList').style.visibility = 'hidden'
@@ -130,7 +137,7 @@ function newHtml(obj) {
 
     let temp = document.getElementById(obj.getAttribute('data-html'))
     temp.classList.add('newHtml')
-    temp.style.visibility = 'visible'
+    // temp.style.visibility = 'visible'
 
     temp.firstElementChild.nextElementSibling.classList.add('innerHrHtml')
 

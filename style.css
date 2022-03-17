@@ -226,6 +226,7 @@ a{
     top: 9vh;
 }
 .newHtml{
+    visibility: visible;
     position: absolute;
     left: 21.5vw;
     top: 23vh;
